@@ -1,0 +1,120 @@
+.AddItem_Parent{
+    margin-top: 3%;
+    height: 650px;
+    width: 100%;
+    background: #D26565;
+    border-radius: 25px 25px 0px 0px;
+    color: white;
+}
+
+.AddItem_Upload {
+    margin-top: 5%;
+    margin-bottom: 4%;
+    width: 200px;
+    height: 260px;
+    border-radius: 10%;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+/* .AddItem_Upload img{
+    display: none;
+} */
+
+.AddItem_Upload img[src]{
+    width: 100%;
+    height: 100%;
+    display: cover;
+    border-radius: 10%;
+    z-index: 10;
+    /* background: rgba(0, 0, 0, 0.3); */
+    outline: none;
+    border : 0;
+}
+
+.AddItem_Upload_Label {
+    background:  rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 110px 75px 110px 75px;
+    border-radius: 10%;
+    cursor: pointer;
+} 
+
+.AddItem_Upload input[type=file] {
+    width: 100%;
+    margin: 8px 0;
+    border-radius: 25px;
+    border: none;
+    margin: auto 20% auto;
+    margin-top: 2%;
+    display: none;
+}
+
+
+.AddItem_Parent datalist{
+    width: 100%;
+    margin-top: 3%;
+    outline: none;
+    border-radius: 25px;
+    border: none;
+    border: 0.1px solid lightgrey;
+    margin: auto 20% auto;
+    margin-top: 2%;
+    background-color: #f8f8f8;
+    color: #C4C4C4;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+
+.AddItem_Parent select:focus{
+    outline: none;
+}
+
+
+.AddItem_Content {
+    margin: auto;
+    width: 50%;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.AddItem_Parent button {
+    width: 140px;
+    /* margin-left: 45%;
+    margin-right: 45%; */
+    margin: auto 150px;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px 10px;
+    cursor: pointer;
+}
+
+.AddItem_Parent input[type=text] {
+    width: 75%;
+    padding: 7px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: none;
+    border: 0.1px solid lightgrey;
+    margin: auto 20% auto;
+    margin-top: 2%;
+    background-color: #f8f8f8;
+    color: #C4C4C4;
+}
+
+
+
+
+.AddItem_Parent input:focus {
+    outline: none;
+}

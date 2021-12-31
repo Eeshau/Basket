@@ -1,0 +1,53 @@
+.Header_top {
+    display: flex   
+}
+
+.Header_top h2{
+   margin-left: 20px;  
+}
+
+
+.Header_Super_Parent {
+    position: sticky;
+    top: 0;
+    background: white;
+}
+
+.Header_Super_Parent {
+    cursor: pointer;
+}
+
+.Header_Parent {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background: #D26565;
+    height: 60px;
+}
+
+
+
+.Header_Parent h3 {
+    color: white;
+    cursor: pointer;
+    margin: auto;
+}
+
+
+
+.SearchBar {
+    width: 100%;
+    padding: 7px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: none;
+    border: 0.1px solid lightgrey;
+    margin: auto 20% auto;
+    margin-top: 2%;
+    background-color: #f8f8f8;
+    color: #C4C4C4;
+  }
+  
+  .SearchBar:focus{
+    outline: none;
+  }

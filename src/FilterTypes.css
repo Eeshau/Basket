@@ -1,0 +1,19 @@
+.FilterCard_Parent {
+    background: #ebebeb;
+    width: 90%;
+    height: 50px;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.FilterCard_Parent:hover {
+    background: #dbd9d9;
+}
+
+.FilterCard_Parent h3{
+align-self: center;
+margin-left: 15px;
+}
+
