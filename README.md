@@ -17,4 +17,4 @@ React chrome extension. One shopping cart for all your shopping. Organize items 
 4. Click on the basket icon in the tool bar.
 
 <h2>Next steps</h2>
-Will be working on adding functionality to update prices from the sites and autofill the image and other data -at the moment the site title is only autofilled.
+Will be working on adding functionality to update prices from the sites and autofill the image and other data -at the moment the website is only autofilled.
