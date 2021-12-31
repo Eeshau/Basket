@@ -7,7 +7,6 @@ React chrome extension. One shopping cart for all your shopping. Organize items 
 
 <h2>Playing around with it </h2>
 1. Go to chrome://extensions/ or click on the puzzle icon next to your extensions.
-
 2. Turn on developer mode
 <img width="157" alt="Screenshot 2021-12-31 at 3 58 04 PM" src="https://user-images.githubusercontent.com/54783383/147838821-1095355a-9d14-4325-870a-0ad0011ac6cf.png">
 
