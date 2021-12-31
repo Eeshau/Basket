@@ -19,4 +19,4 @@ No data is stored on a external database. All data is stored locally using chrom
 4. Click on the basket icon in the tool bar.
 
 <h2>Next steps</h2>
-Will be working on adding functionality to update prices from the sites and autofill the image and other data -at the moment the website is only autofilled.
+Will be working on adding functionality to update prices from the sites and autofill the image and other data -at the moment the product name, store and url are only autofilled.
