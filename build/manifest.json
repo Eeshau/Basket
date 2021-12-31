@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "Basket List",
+	"author": "Eesha",
+	"version": "1.0.1",
+	"description": "One cart for all your shopping",
+	"icons": {
+		"16": "basketLogo16.ico",
+		"48": "basketLogo48.ico",
+		"128": "basketLogo128.ico"
+	},
+	"permissions": [
+		"activeTab",
+		"unlimitedStorage",
+        "tabs",
+        "http://*/*png",
+        "https://*/*jpg", 
+		"https://*/*jpeg",
+		"https://*/*gif",
+        "storage"
+    ],
+	"chrome_url_overrides": {
+		"newtab": "index.html",
+    "default_popup": "index.html"
+	},
+	"browser_action": {
+        "default_popup":  "index.html"
+	}
+
+}
