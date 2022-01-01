@@ -1,3 +1,36 @@
+# Basket
+React chrome extension. One shopping cart for all your shopping. Organize items by store and make your own lists. Add notes and monitor prices for each item. 
+
+No data is stored on a external database. All data is stored locally using chrome.storage.local.
+<img width="1226" alt="Extension" src="https://user-images.githubusercontent.com/54783383/147838680-d69bbb21-5aa2-4698-9e63-859b7457392b.png">
+
+
+
+
+<h2>Playing around with it </h2>
+
+npm run build
+
+1. Go to chrome://extensions/ or click on the puzzle icon next to your extensions.
+
+2. Turn on developer mode
+<img width="157" alt="Screenshot 2021-12-31 at 3 58 04 PM" src="https://user-images.githubusercontent.com/54783383/147838821-1095355a-9d14-4325-870a-0ad0011ac6cf.png">
+
+3. Load unpacked, then upload the build folder.
+<img width="871" alt="Screenshot 2021-12-31 at 3 58 27 PM" src="https://user-images.githubusercontent.com/54783383/147838830-e42ed9c2-5461-4749-8b32-be41bd0ec4fc.png">
+
+4. Click on the basket icon in the tool bar.
+
+<h2>Next steps</h2>
+Will be working on adding functionality to update prices from the sites and autofill the image and other data -at the moment the product name, store and url are only autofilled. 
+When adding an item the lists section uses a datalist, in a normal non-popup window it works fine but Chrome has a bug for popup windows. Hopefully get's resolved soon or I might just could a seperate component. https://bugs.chromium.org/p/chromium/issues/detail?id=161302 
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
