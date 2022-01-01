@@ -15,6 +15,9 @@ import AddItem from './AddItem';
 function App() {
   const [page, setPage] = useState("ALL");
   const [link, setLink] = useState("");
+  const [store, setStore] = useState("");
+  const [name, setName] = useState("");
+
   const [streamFilter, setStreamFilter] = useState(null);
   const [items, setItems] = useState([{
     name: "couch",
@@ -23,7 +26,7 @@ function App() {
     catagory: "furniture",
     price: "100",
     store: "bedbath",
-    date: "nov 10th"
+    date: "5-10-2021"
   }, {
     name: "bed",
     number: "1",
@@ -31,7 +34,7 @@ function App() {
     catagory: "furniture",
     price: "150",
     store: "bedbath",
-    date: "nov 11th"
+    date: "2-11-2021"
   }, {
     name: "sunscreen",
     number: "2",
@@ -39,7 +42,7 @@ function App() {
     catagory: "cosmetics",
     price: "9",
     store: "sephora",
-    date: "nov 12th"
+    date: "7-10-2020"
   }]);
   const [listCatagories, setListCatagories] = useState([])
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -48,12 +51,6 @@ function App() {
     setSearchTerm(event.target.value);
   };
 
-  function setStorage (value) {
-    window.chrome.storage.local.set({"key": value}, function() {
-      console.log('Value is set to ' + value.at(-1).name);
-    });
-    getStorage(value)
-	}
 
 
   //run this function as soon as the app starts, to get the list updated historical values
@@ -64,31 +61,23 @@ function App() {
     });
 	}
 
+  useEffect(()=>{
+    getStorage() //calling the above function
+  }, []) // <-- empty dependency array, only runs once similar to componentDidMount
+	
 
+  //grabbing the name of the website name, url, product ect.
   window.chrome.windows.getCurrent({populate:true}, window => {
+    const productName = window.tabs.filter(tab => tab.active)[0].title
     const site = window.tabs.filter(tab => tab.active)[0].url
+    const siteName = site.split(".")[1]
+
+    setName(productName)
     setLink(site)
-    console.log(window.tabs.filter(tab => tab.active)[0])
+    setStore(siteName)
   });
 
 
-
-
-
-//   function modifyDOM() {
-//     //You can play with your DOM here or check URL against your regex
-//     console.log('Tab script:');
-//     console.log(document.body);
-//     return document.body.innerHTML;
-// }
-
-//   window.chrome.tabs.executeScript({
-//     code: '(' + modifyDOM + ')();' //argument here is a string but function.toString() returns function's code
-//   }, (results) => {
-//     //Here we have just the innerHTML and not DOM structure
-//     console.log('Popup script:')
-//     console.log(results[0]);
-//   });
 
 
 
@@ -99,7 +88,6 @@ function App() {
       <StoreProvider>
       <Header setPage={setPage}/>
       <input placeholder="search" value={searchTerm} onChange={handleChange} style={{width:"60%"}} className="SearchBar"/>
-
 
       { (page == "ALL" && setSearchTerm =="") &&
         <Stream filterType={page} streamFilter={streamFilter} items={items} setItems={setItems} setListCatagories={setListCatagories}/>
@@ -114,7 +102,7 @@ function App() {
       }
 
       { (page == "Add")  &&
-        <AddItem filterType={page} items={items} setItems={setItems} listCatagories={listCatagories} setListCatagories={setListCatagories} link={link}/>
+        <AddItem filterType={page} items={items} setItems={setItems} listCatagories={listCatagories} setListCatagories={setListCatagories} name={name} link={link} store={store}/>
       }
 
       {/* SEARCH FILTER */}
@@ -122,10 +110,13 @@ function App() {
         <Stream filterType={page} items={items} setItems={setItems} streamFilter={streamFilter}  searchTerm={searchTerm}/>
       }
 
-      <button onClick={() => getStorage(items)}>GET value</button>
       {/* <button onClick={() => modifyDOM()}>GET DOM</button> */}
 
-      <Footer setPage={setPage}/>
+      { (page != "Add") &&
+     <Footer setPage={setPage}/>
+      }
+
+ 
       </StoreProvider>
     </div>
 

@@ -5,9 +5,9 @@ import "./AddItem.css"
 // what info would it have that isn't already on the card, just link to the items site?
 
 export default function AddItem(props) {
-    const { value:itemName, bind:bindItemName, reset:resetItemName } = useInput('');
+    const { value:itemName, bind:bindItemName, reset:resetItemName } = useInput(props.name);
     const { value:price, bind:bindPrice, reset:resetPrice } = useInput('');
-    const { value:store, bind:bindStore, reset:resetStore } = useInput('');
+    const { value:store, bind:bindStore, reset:resetStore } = useInput(props.store);
     const { value:link, bind:bindLink, reset:resetLink} = useInput(props.link); //use the url from chrome tab here, as default state
     const { value:notes, bind:bindNotes, reset:resetNotes} = useInput('');
 
@@ -29,7 +29,6 @@ export default function AddItem(props) {
 
     const onChangeImage = e => {
         if (e.target.files[0]) {
-          console.log("picture: ", e.target.files);
           setPicture(e.target.files[0]);
           const reader = new FileReader();
           reader.addEventListener("load", () => {
@@ -50,17 +49,14 @@ export default function AddItem(props) {
 
         props.setItems([...props.items, {
             name: itemName,
-            //will the img be a url or need || handling ?
             image: imgData,
             catagory: catagory,
             number: "2",
             price: price,
             store: store,
             link: link,
-            date: new Date()
+            date: new Date().getDay().toString() + "-" + new Date().getMonth().toString() + "-" + new Date().getFullYear().toString()
         }])
-
-        console.log(imgData)//
     }
 
     //if the items change, then as a side effect the setStorage function will run
@@ -70,9 +66,6 @@ export default function AddItem(props) {
         props.setListCatagories([...new Set(list)])
     }, [props.items])
 
-    function readList() {
-        console.log("items:", props.items)
-    }
 
     
 
@@ -80,7 +73,7 @@ export default function AddItem(props) {
         <div className="AddItem_Parent">
             <div className="AddItem_Upload">
                 <img src={imgData}></img>
-                <label for="file-upload" className="AddItem_Upload_Label">Upload Image</label>
+                <label for="file-upload" className="AddItem_Upload_Label">⬆️ Upload Image</label>
                 <input id="file-upload" type="file" name="upload_img" onChange={onChangeImage}></input>
             </div>
             <form onSubmit={handleSubmit}>
@@ -105,7 +98,6 @@ export default function AddItem(props) {
             </div>
             <button type="submit" value="Submit" > ADD ITEM </button>
             </form>
-            {/* <button onClick={readList}>read</button> */}
         </div>
     )
 

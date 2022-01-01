@@ -7,10 +7,6 @@ export default function FilterCard(props) {
         props.setStreamFilter(type)
     }
 
-    // useEffect(() => {
-    //     console.log("from filter card useeffect")
-    //     changeItemsStream(props.filterName)
-    // }, [props.items])
 
     return (
         <div className="FilterCard_Parent">

@@ -1,6 +1,6 @@
 .AddItem_Parent{
     margin-top: 3%;
-    height: 650px;
+    height: 620px;
     width: 100%;
     background: #D26565;
     border-radius: 25px 25px 0px 0px;
@@ -8,15 +8,16 @@
 }
 
 .AddItem_Upload {
-    margin-top: 5%;
-    margin-bottom: 4%;
     width: 200px;
-    height: 260px;
+    height: 220px;
     border-radius: 10%;
     margin: auto;
     cursor: pointer;
     position: relative;
     text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 /* .AddItem_Upload img{
@@ -25,25 +26,36 @@
 
 .AddItem_Upload img[src]{
     width: 100%;
-    height: 100%;
+    height: 220px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     display: cover;
     border-radius: 10%;
-    z-index: 10;
+
     /* background: rgba(0, 0, 0, 0.3); */
     outline: none;
     border : 0;
+    grid-row-start: 1;
+    grid-column-start: 1;
 }
 
 .AddItem_Upload_Label {
+    height: 150px;
     background:  rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 110px 75px 110px 75px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    padding: 65px 75px 0px 75px;
     border-radius: 10%;
     cursor: pointer;
+    border-style: dotted;
+    border-color: white;
 } 
+
+.AddItem_Parent form {
+    margin-top: 15px;
+}
 
 .AddItem_Upload input[type=file] {
     width: 100%;
@@ -79,16 +91,16 @@
 
 .AddItem_Content {
     margin: auto;
-    width: 50%;
+    width: 70%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 80px auto;
 }
 
 .AddItem_Parent button {
     width: 140px;
     /* margin-left: 45%;
     margin-right: 45%; */
-    margin: auto 150px;
+    margin: auto 125px;
     text-align: center;
     border: none;
     outline: none;
